@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa86d1ff-f54c-40ad-952d-946b785d9176" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.php" afterPath="$PROJECT_DIR$/config.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PDOErrors.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -80,6 +81,18 @@
       <command text="git stash" />
       <command text="git stash --apply" />
       <command text="git stash apply" />
+      <command text="git checkout" />
+      <command text="git commit -a -m &quot;print pdo driver&quot;" />
+      <command text="git push -u origin master" />
+      <command text="git push -u origin" />
+      <command text="git checkout" />
+      <command text="git diff" />
+      <command text="git checkout config.php" />
+      <command text="git diff" />
+      <command text="git status" />
+      <command text="git rm --cashed PDOErrors.txt" />
+      <command text="git rm --cached PDOErrors.txt" />
+      <command text="git status" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -226,12 +239,12 @@
       <updated>1472292947213</updated>
       <workItem from="1472292948909" duration="4604000" />
       <workItem from="1472298308085" duration="2464000" />
-      <workItem from="1472306317460" duration="97000" />
+      <workItem from="1472306317460" duration="1486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7165000" />
+    <option name="totallyTimeSpent" value="8554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -363,7 +376,7 @@
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
           <folding />
         </state>
       </provider>
