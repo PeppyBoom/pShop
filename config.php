@@ -21,8 +21,8 @@ function __autoload($className) {
     }
 
     try {
-        $connection = new PDO("mysql:host = " . HOST . ";dbName = " . DB_NAME . ";charset = utf-8", DB_USER, DB_PASSWORD);
-        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $GLOBALS['connection'] = new PDO("mysql:host = " . HOST . ";dbName = " . DB_NAME . ";charset = utf-8", DB_USER, DB_PASSWORD);
+        $GLOBALS['connection']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
         echo "Не удалось подключиться к базе!";
         file_put_contents("PDOErrors.txt", $e->getMessage(), FILE_APPEND);

@@ -1,10 +1,12 @@
 <?php
 
+use lib\Lib_Application;
+
 require_once "./config.php";
 
 //создаю объект, который ищет нужные контроллеры
 $router = new Lib_Application();
-$member = $router->Run();
+$member = $router->run();
 
 //если контроллер вернул какие-то переменные, то делаю их доступными для публичной части
 if (isset($member)) {
