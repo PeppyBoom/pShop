@@ -9,11 +9,11 @@ use PDOException;
  * @package lib
  * класс маршрутизатор, подбирает нужный контроллер для  обработки данных
  */
-class Application
+class ApplicationRouter
 {
     private function getRoute() {
         if (empty($_GET['route'])) {
-            $route = 'index';
+            $route = 'MainController';
         } else {
             $route = $_GET['route'];
             $rt = explode("/", $route);
@@ -40,15 +40,15 @@ class Application
 
     private function getController() {
         $route = $this->getRoute();
-        $pathController = "application/controllers";
-        $controller = $pathController . $route . ".php";
+        $pathController = "\\application\\controllers\\";
+        $controller = $pathController . $route;
 
         return $controller;
     }
 
     public function getView() {
         $route = $this->getRoute();
-        $pathView = "application/view";
+        $pathView = "\\application\\view\\";
         $view = $pathView . $route . ".php";
 
         return $view;
@@ -57,12 +57,10 @@ class Application
     public function run() {
         session_start();
         $controller = $this->getController();
-        $cl = explode(".", $controller);
-        $cl = $cl[0];
-        $nameController = str_replace("/", "_", $cl);
+        $nameController = $controller;
         $controller = new $nameController;
         $controller->index();
-        $member = $controller->member();
+        $member = $controller->member;
 
         return $member;
     }
