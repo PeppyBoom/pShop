@@ -22,8 +22,7 @@ class MainController extends BaseController
      */
     public function index()
     {
-        $dataBase = ApplicationDataBase::getInstance();
-        $statement = $dataBase->query("select * from tshop.user");
+        $statement = ApplicationDataBase::getInstance()->query("select * from tshop.user");
 
         while ($row = $statement->fetchObject()) {
             echo $row->login . "<br/>\n";

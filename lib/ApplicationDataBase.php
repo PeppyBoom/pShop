@@ -25,8 +25,11 @@ class ApplicationDataBase
     /**
      * ApplicationDataBase constructor.
      */
-    private function __construct()
-    {
+    private function __construct() {}
+    private function __clone() {}
+    private function __wakeup() {}
+
+    public static function connection() {
         try {
             self::$connection = new PDO(
                 "mysql:host = " . self::$dataBase["HOST"] .
@@ -41,10 +44,9 @@ class ApplicationDataBase
             echo "Не удалось подключиться к базе!";
             file_put_contents("PDOErrors.txt", $e->getMessage(), FILE_APPEND);
         }
-    }
 
-    private function __clone() {}
-    private function __wakeup() {}
+        return self::$connection;
+    }
 
     public static function getInstance() {
         return null == self::$instance ? new static() : self::$instance;
@@ -56,7 +58,7 @@ class ApplicationDataBase
      */
     public function query($query) {
         try {
-            $result = self::$connection->query($query);
+            $result = self::connection()->query($query);
             return $result;
         } catch (PDOException $e) {
             echo "Не удалось выполнить запрос!";
