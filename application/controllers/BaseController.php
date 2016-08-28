@@ -17,11 +17,13 @@ class BaseController
 {
     private $member;
 
-    function __set($name, $value) {
+    function __set($name, $value)
+    {
         $this->member[$name] = $value;
     }
 
-    function __get($name) {
+    function __get($name)
+    {
         return $this->member;
     }
 }

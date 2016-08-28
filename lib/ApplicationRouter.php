@@ -11,7 +11,8 @@ use PDOException;
  */
 class ApplicationRouter
 {
-    private function getRoute() {
+    private function getRoute()
+    {
         if (empty($_GET['route'])) {
             $route = 'MainController';
         } else {
@@ -38,7 +39,8 @@ class ApplicationRouter
         return $route;
     }
 
-    private function getController() {
+    private function getController()
+    {
         $route = $this->getRoute();
         $pathController = "\\application\\controllers\\";
         $controller = $pathController . $route;
@@ -46,7 +48,8 @@ class ApplicationRouter
         return $controller;
     }
 
-    public function getView() {
+    public function getView()
+    {
         $route = $this->getRoute();
         $pathView = "\\application\\view\\";
         $view = $pathView . $route . ".php";
@@ -54,7 +57,8 @@ class ApplicationRouter
         return $view;
     }
 
-    public function run() {
+    public function run()
+    {
         session_start();
         $controller = $this->getController();
         $nameController = $controller;

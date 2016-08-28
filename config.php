@@ -3,13 +3,8 @@
 //print_r(PDO::getAvailableDrivers());
 
 define("PATH_SITE", $_SERVER['DOCUMENT_ROOT']);
-define("HOST", 'localhost');
-define("DB_USER", "root");
-define("DB_PASSWORD", "");
-define("DB_NAME", "tShop");
 
-
-function __autoload($className) {
+function classAutoLoad($className) {
     $path = str_replace("_", "/", strtolower($className));
 
     if (file_exists($path . ".php")) {
@@ -19,12 +14,6 @@ function __autoload($className) {
         echo "К сожалению такой страницы не существует. [ " . PATH_SITE . "/" . $path . ".php ]";
         die();
     }
-
-    try {
-        $GLOBALS['connection'] = new PDO("mysql:host = " . HOST . ";dbName = " . DB_NAME . ";charset = utf-8", DB_USER, DB_PASSWORD);
-        $GLOBALS['connection']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo "Не удалось подключиться к базе!";
-        file_put_contents("PDOErrors.txt", $e->getMessage(), FILE_APPEND);
-    }
 }
+
+spl_autoload_register('classAutoLoad');

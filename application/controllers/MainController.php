@@ -9,9 +9,24 @@
 namespace application\controllers;
 
 
+use lib\ApplicationDataBase;
+
+/**
+ * Class MainController
+ * @package application\controllers
+ */
 class MainController extends BaseController
 {
-    public function index() {
+    /**
+     *
+     */
+    public function index()
+    {
+        $dataBase = ApplicationDataBase::getInstance();
+        $statement = $dataBase->query("select * from tshop.user");
 
+        while ($row = $statement->fetchObject()) {
+            echo $row->login . "<br/>\n";
+        }
     }
 }
