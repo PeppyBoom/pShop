@@ -9,7 +9,7 @@ use PDOException;
  * @package lib
  * класс маршрутизатор, подбирает нужный контроллер для  обработки данных
  */
-class Lib_Application
+class Application
 {
     private function getRoute() {
         if (empty($_GET['route'])) {

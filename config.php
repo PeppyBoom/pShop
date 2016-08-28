@@ -12,7 +12,7 @@ define("DB_NAME", "tShop");
 function __autoload($className) {
     $path = str_replace("_", "/", strtolower($className));
 
-    if (file_exists($path)) {
+    if (file_exists($path . ".php")) {
         include_once $path . ".php";
     } else {
         header("HTTP/1.0 404 Not found");

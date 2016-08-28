@@ -4,7 +4,7 @@ $mallCart = getSmallCart();
 
 //подключаю меню
 function getMenu() {
-    return Lib_Men::getInstance()->getMenu();
+    return Lib_Menu::getInstance()->getMenu();
 }
 
 //подключаю маленькую корзину
