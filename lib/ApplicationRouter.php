@@ -51,7 +51,8 @@ class ApplicationRouter
     public function getView()
     {
         $route = $this->getRoute();
-        $pathView = "\\application\\view\\";
+        $route = str_replace("Controller", "", $route);
+        $pathView = "\\application\\views\\$route\\";
         $view = $pathView . $route . ".php";
 
         return $view;

@@ -18,4 +18,4 @@ if (isset($member)) {
 //подключаю функционал сайта
 //require_once "./functional.php";
 //подключаю шаблоны сайта
-//require_once "./layouts/index.php";
+require_once "./layouts/index.php";
