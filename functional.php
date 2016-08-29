@@ -1,13 +1,15 @@
 <?php
+use lib\Menu;
+
 $menu = getMenu();
-$mallCart = getSmallCart();
+//$mallCart = getSmallCart();
 
 //подключаю меню
 function getMenu() {
-    return Lib_Menu::getInstance()->getMenu();
+    return Menu::getInstance()->getMenu();
 }
 
 //подключаю маленькую корзину
-function getSmallCart() {
-    return Lib_SmallCart::getInstance()->getCartData();
-}
+//function getSmallCart() {
+//    return Lib_SmallCart::getInstance()->getCartData();
+//}
