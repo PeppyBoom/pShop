@@ -44,10 +44,10 @@ class ApplicationDataBase
             self::$connection = new PDO(
                 "mysql:host = " . self::$dataBase["HOST"] .
                 ";dbName = " . self::$dataBase["NAME"] .
-                ";charset = " . self::$dataBase["CHARSET"],
-                self::$dataBase["USER"],
-                self::$dataBase["PASSWORD"],
-                [PDO::ATTR_PERSISTENT => true]
+                ";charset = " . self::$dataBase["CHARSET"]
+                , self::$dataBase["USER"]
+                , self::$dataBase["PASSWORD"]
+//                , [PDO::ATTR_PERSISTENT => true]
             );
             self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {

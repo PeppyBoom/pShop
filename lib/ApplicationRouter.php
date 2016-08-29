@@ -14,7 +14,7 @@ class ApplicationRouter
     private function getRoute()
     {
         if (empty($_GET['route'])) {
-            $route = 'MainController';
+            $route = 'Main';
         } else {
             $route = $_GET['route'];
             $rt = explode("/", $route);
@@ -43,7 +43,7 @@ class ApplicationRouter
     {
         $route = $this->getRoute();
         $pathController = "\\application\\controllers\\";
-        $controller = $pathController . $route;
+        $controller = $pathController . $route . "Controller";
 
         return $controller;
     }
