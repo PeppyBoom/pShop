@@ -1,6 +1,7 @@
 <?php
 
 namespace lib;
+
 use PDO;
 use PDOException;
 
@@ -25,11 +26,20 @@ class ApplicationDataBase
     /**
      * ApplicationDataBase constructor.
      */
-    private function __construct() {}
-    private function __clone() {}
-    private function __wakeup() {}
+    private function __construct()
+    {
+    }
 
-    public static function connection() {
+    private function __clone()
+    {
+    }
+
+    private function __wakeup()
+    {
+    }
+
+    public static function connection()
+    {
         try {
             self::$connection = new PDO(
                 "mysql:host = " . self::$dataBase["HOST"] .
@@ -48,7 +58,8 @@ class ApplicationDataBase
         return self::$connection;
     }
 
-    public static function getInstance() {
+    public static function getInstance()
+    {
         return null == self::$instance ? new static() : self::$instance;
     }
 
@@ -56,13 +67,31 @@ class ApplicationDataBase
      * @param $query
      * @return \PDOStatement
      */
-    public function query($query) {
-        try {
-            $result = self::connection()->query($query);
-            return $result;
-        } catch (PDOException $e) {
-            echo "Не удалось выполнить запрос!";
-            file_put_contents("PDOErrors.txt", $e->getMessage(), FILE_APPEND);
+    public function query($query)
+    {
+        if (($numArgs = func_num_args()) > 1) {
+            $args = func_get_args();
+            $query = vsprintf($query, $args);
+        }
+
+        if (preg_match('`^(INSERT|UPDATE|DELETE|REPLACE)`i', $query, $null)) {
+            try {
+                $result = self::connection()->exec($query);
+                return $result;
+            } catch (PDOException $e) {
+                echo "Не удалось выполнить запрос!";
+                file_put_contents("PDOErrors.txt", $e->getMessage(), FILE_APPEND);
+            }
+        } elseif(preg_match('`^(SELECT)`i', $query, $null)) {
+            try {
+                $result = self::connection()->query($query);
+                return $result;
+            } catch (PDOException $e) {
+                echo "Не удалось выполнить запрос!";
+                file_put_contents("PDOErrors.txt", $e->getMessage(), FILE_APPEND);
+            }
+        } else {
+            echo "В этом методе такой запрос не возможен!";
         }
     }
 }

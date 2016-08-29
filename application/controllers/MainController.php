@@ -22,10 +22,15 @@ class MainController extends BaseController
      */
     public function index()
     {
-        $statement = ApplicationDataBase::getInstance()->query("select * from tshop.user");
+        $statement = ApplicationDataBase::getInstance()->query(
+//            "alter table tshop.user add date TIMESTAMP",
+            "select * from tshop.user",
+            "insert into tshop.user (login, pass, role) VALUES ('', '', 2)");
 
-        while ($row = $statement->fetchObject()) {
-            echo $row->login . "<br/>\n";
+        if (is_object($statement)) {
+            while ($row = $statement->fetchObject()) {
+                echo $row->login . "<br/>\n";
+            }
         }
     }
 }
