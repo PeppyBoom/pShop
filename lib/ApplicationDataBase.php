@@ -95,8 +95,31 @@ class ApplicationDataBase
         }
     }
 
-    public function buildQuery()
+    /**
+     * @param $query
+     * @param $arr
+     * @param string $divide
+     * @return bool|\PDOStatement
+     */
+    public function buildQuery($query, $arr, $divide = ',')
     {
+        if (is_array($arr)) {
+            $partQuery = '';
 
+            foreach ($arr as $index => $value) {
+                $partQuery .= sprintf(" %s = '%s'" . $divide, $index, $value);
+            }
+
+            $partQuery = trim($partQuery, $divide);
+            $query .= $partQuery;
+            return $this->query($query);
+        }
+
+        return false;
+    }
+
+    public function insertId()
+    {
+        return self::getInstance()->connection()->lastInsertId();
     }
 }

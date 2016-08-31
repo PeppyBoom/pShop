@@ -3,6 +3,7 @@
 namespace application\controllers;
 
 
+use application\models\Order;
 use lib\SmallCart;
 
 class OrderController extends BaseController
