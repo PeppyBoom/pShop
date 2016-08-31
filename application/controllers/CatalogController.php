@@ -8,7 +8,9 @@
 
 namespace application\controllers;
 
+use application\models\Cart;
 use application\models\Catalog;
+use lib\SmallCart;
 
 /**
  * Class CatalogController
@@ -22,7 +24,7 @@ class CatalogController extends BaseController
         if ($id = $_REQUEST['in-cart-product-id']) {
             $cart = new Cart();
             $cart->addToCart($id);
-            SmalCart::getInstance()->setCartData();
+            SmallCart::getInstance()->setCartData();
             header("Location: /catalog");
             exit();
         }

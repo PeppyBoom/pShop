@@ -94,4 +94,9 @@ class ApplicationDataBase
             echo "В этом методе такой запрос не возможен!";
         }
     }
+
+    public function buildQuery()
+    {
+
+    }
 }

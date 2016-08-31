@@ -1,8 +1,9 @@
 <?php
 use lib\Menu;
+use lib\SmallCart;
 
 $menu = getMenu();
-//$mallCart = getSmallCart();
+$smallCart = getSmallCart();
 
 //подключаю меню
 function getMenu() {
@@ -10,6 +11,6 @@ function getMenu() {
 }
 
 //подключаю маленькую корзину
-//function getSmallCart() {
-//    return Lib_SmallCart::getInstance()->getCartData();
-//}
+function getSmallCart() {
+    return SmallCart::getInstance()->getCartData();
+}

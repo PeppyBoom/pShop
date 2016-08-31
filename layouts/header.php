@@ -10,9 +10,9 @@
     <div id="inner_wrapper">
         <div id="header">
             <div class="smalcart">
-                <strong>Товаров в корзине:</strong>	<?php echo $smal_cart['cart_count']?> шт.
+                <strong>Товаров в корзине:</strong>	<?php echo $smallCart['cartCount']?> шт.
                 <br/>
-                <strong>На сумму:</strong>	<?php echo $smal_cart['cart_price']?> руб.
+                <strong>На сумму:</strong>	<?php echo $smallCart['cartPrice']?> руб.
                 <br/>
                 <a href='/cart'>Оформить заказ</a>
             </div>
