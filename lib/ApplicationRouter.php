@@ -11,6 +11,10 @@ use PDOException;
  */
 class ApplicationRouter
 {
+    /**
+     * @return string
+     * роутер
+     */
     private function getRoute()
     {
         if (empty($_GET['route'])) {
@@ -23,10 +27,10 @@ class ApplicationRouter
             if ($rt[count($rt) - 2] == "product") {
                 $query = "select * from product where url LIKE '$route'";
                 try {
-                    $result = $GLOBALS['connection']->query($query);
+                    $statement = ApplicationDataBase::getInstance()->query($query);
 
-                    while ($row = $result->fetch()) {
-                        $_REQUEST['id'] = $row['id'];
+                    while ($row = $statement->fetchObject()) {
+                        $_REQUEST['id'] = $row->id;
                         $route = "product";
                     }
                 } catch (PDOException $e) {
@@ -39,6 +43,10 @@ class ApplicationRouter
         return $route;
     }
 
+    /**
+     * @return string
+     * получает нужный контроллер
+     */
     private function getController()
     {
         $route = $this->getRoute();
@@ -48,6 +56,10 @@ class ApplicationRouter
         return $controller;
     }
 
+    /**
+     * @return string
+     * получает вьюху соответствующего контроллера
+     */
     public function getView()
     {
         $route = $this->getRoute();
@@ -58,6 +70,10 @@ class ApplicationRouter
         return $view;
     }
 
+    /**
+     * @return mixed
+     * вызввает контроллер и возвращает его свойства
+     */
     public function run()
     {
         session_start();

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 28.08.2016
- * Time: 22:14
- */
+
 
 namespace application\controllers;
 
@@ -17,11 +12,19 @@ class BaseController
 {
     private $member;
 
+    /**
+     * @param $name
+     * @param $value
+     */
     function __set($name, $value)
     {
         $this->member[$name] = $value;
     }
 
+    /**
+     * @param $name
+     * @return mixed
+     */
     function __get($name)
     {
         return $this->member;

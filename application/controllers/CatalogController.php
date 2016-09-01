@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 29.08.2016
- * Time: 18:03
- */
+
 
 namespace application\controllers;
 
@@ -19,6 +14,9 @@ use lib\SmallCart;
  */
 class CatalogController extends BaseController
 {
+    /**
+     * вывод и заказ товара в каталоге
+     */
     public function index()
     {
         if ($id = $_REQUEST['in-cart-product-id']) {

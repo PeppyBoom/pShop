@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 29.08.2016
- * Time: 18:08
- */
+
 
 namespace application\models;
 
@@ -17,6 +12,10 @@ use lib\ApplicationDataBase;
  */
 class Catalog
 {
+    /**
+     * @return array|bool
+     * получает список всех товаров
+     */
     public function getList()
     {
         $query = "select * from tshop.product";

@@ -6,8 +6,16 @@ namespace application\controllers;
 use application\models\Order;
 use lib\SmallCart;
 
+/**
+ * Class OrderController
+ * @package application\controllers
+ * контроллер оформления заказов
+ */
 class OrderController extends BaseController
 {
+    /**
+     * выводит форму для отправки заказа
+     */
     public function index()
     {
         // показываю форму ввода данных

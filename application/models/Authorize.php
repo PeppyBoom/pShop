@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 29.08.2016
- * Time: 19:10
- */
+
 
 namespace application\models;
 
@@ -17,7 +12,12 @@ use lib\ApplicationDataBase;
  */
 class Authorize
 {
-    //проверка данных авторизации
+    /**
+     * @param $login
+     * @param $password
+     * @return array
+     * проверка данных авторизации
+     */
     public function validateAuth($login, $password) {
         $query = ApplicationDataBase::getInstance()->query("select * from tshop.user where login = '$login' and pass = '$password'");
 

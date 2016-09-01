@@ -5,7 +5,7 @@
 define("PATH_SITE", $_SERVER['DOCUMENT_ROOT']);
 
 function classAutoLoad($className) {
-    $path = str_replace("_", "/", strtolower($className));
+    $path = strtolower($className);
 
     if (file_exists($path . ".php")) {
         include_once $path . ".php";

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 29.08.2016
- * Time: 19:02
- */
+
 
 namespace application\controllers;
 use application\models\Authorize;
@@ -16,6 +11,9 @@ use application\models\Authorize;
  */
 class LoginController extends BaseController
 {
+    /**
+     * авторизация
+     */
     public function index()
     {
         //если пришли логин и пароль, создаю модель проверки авторизации и передаю их в нее

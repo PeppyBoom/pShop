@@ -15,7 +15,7 @@ if (isset($member)) {
     }
 }
 
-//подключаю функционал сайта
+//подключаю меню и маленькую корзину
 require_once "./functional.php";
 //подключаю шаблоны сайта
 require_once "./layouts/index.php";

@@ -1,14 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 31.08.2016
- * Time: 16:03
- */
+
 
 namespace lib;
 
-
+/**
+ * Class SmallCart
+ * @package lib
+ * маленькая корзина
+ */
 class SmallCart
 {
     protected static $instance = null;

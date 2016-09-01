@@ -5,6 +5,11 @@ namespace application\models;
 
 use lib\ApplicationDataBase;
 
+/**
+ * Class Order
+ * @package application\models
+ * модель заказов
+ */
 class Order
 {
     private $fio;
@@ -15,6 +20,7 @@ class Order
     /**
      * @param $arrayData
      * @return bool|string
+     * проверка входных данных
      */
     public function isValidate($arrayData)
     {
@@ -34,6 +40,10 @@ class Order
         }
     }
 
+    /**
+     * @return mixed
+     * добавляет заказ в базу
+     */
     public function addOrder()
     {
         $date = mktime();

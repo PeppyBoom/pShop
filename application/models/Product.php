@@ -1,21 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 31.08.2016
- * Time: 15:04
- */
+
 
 namespace application\models;
 
 
 use lib\ApplicationDataBase;
 
+/**
+ * Class Product
+ * @package application\models
+ * модель товаров
+ */
 class Product
 {
     /**
      * @param $id
      * @return array
+     * возвращает товар по его Id
      */
     public function getProduct($id)
     {
@@ -39,6 +40,7 @@ class Product
     /**
      * @param $id
      * @return bool
+     * возвращает цену товара по его Id
      */
     public function getProductPrice($id)
     {

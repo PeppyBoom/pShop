@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 31.08.2016
- * Time: 14:24
- */
+
 
 namespace application\models;
 
 /**
  * Class Cart
  * @package application\models
+ * модель корзины
  */
 class Cart
 {

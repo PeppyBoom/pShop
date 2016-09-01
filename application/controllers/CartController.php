@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 31.08.2016
- * Time: 17:20
- */
+
 
 namespace application\controllers;
 
@@ -15,9 +10,13 @@ use lib\SmallCart;
 /**
  * Class CartController
  * @package application\controllers
+ * контроллер корзины
  */
 class CartController extends BaseController
 {
+    /**
+     * обновление корзины
+     */
     public function index()
     {
         $model = new Cart();
