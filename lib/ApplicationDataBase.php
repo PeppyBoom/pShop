@@ -11,14 +11,6 @@ use PDOException;
  */
 class ApplicationDataBase
 {
-    private static $dataBase = [
-        "HOST" => "localhost",
-        "USER" => "root",
-        "PASSWORD" => "",
-        "NAME" => "tShop",
-        "CHARSET" => "utf-8",
-    ];
-
     private static $connection;
 
     private static $instance = null;

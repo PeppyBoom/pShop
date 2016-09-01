@@ -18,7 +18,7 @@ class Catalog
      */
     public function getList()
     {
-        $query = "select * from tshop.product";
+        $query = "select * from pShop.product";
         $result = ApplicationDataBase::getInstance()->query($query);
 
         if (is_object($result)) {

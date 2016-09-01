@@ -20,7 +20,7 @@ class Product
      */
     public function getProduct($id)
     {
-        $query = "select * from tshop.product where id ='$id'";
+        $query = "select * from pShop.product where id ='$id'";
         $statement = ApplicationDataBase::getInstance()->query($query);
 
         if ($row = $statement->fetchObject()) {
@@ -44,7 +44,7 @@ class Product
      */
     public function getProductPrice($id)
     {
-        $query = "select price from tshop.product where id = '$id'";
+        $query = "select price from pShop.product where id = '$id'";
         $statement = ApplicationDataBase::getInstance()->query($query);
 
         if ($row = $statement->fetchObject()) {

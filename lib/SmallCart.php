@@ -57,7 +57,7 @@ class SmallCart
 
         if ($this->getCookieCart() && $_SESSION['cart']) {
             foreach ($_SESSION['cart'] as $id => $count) {
-                $query = "select p.price from tshop.product p where id = '{$id}'";
+                $query = "select p.price from pShop.product p where id = '{$id}'";
                 $statement = ApplicationDataBase::getInstance()->query($query);
 
                 if ($row = $statement->fetchObject()) {
