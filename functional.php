@@ -10,7 +10,8 @@ $smallCart = getSmallCart();
  * @return string
  * подключает меню
  */
-function getMenu() {
+function getMenu()
+{
     return Menu::getInstance()->getMenu();
 }
 
@@ -18,6 +19,7 @@ function getMenu() {
  * @return array
  * подключает маленькую корзину
  */
-function getSmallCart() {
+function getSmallCart()
+{
     return SmallCart::getInstance()->getCartData();
 }

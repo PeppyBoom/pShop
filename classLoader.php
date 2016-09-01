@@ -1,6 +1,7 @@
 <?php
 
-function classAutoLoad($className) {
+function classAutoLoad($className)
+{
     $path = strtolower($className);
 
     if (file_exists($path . ".php")) {
