@@ -34,7 +34,7 @@ class OrderController extends BaseController
 
         if ($_REQUEST["thanks"]) {
             $this->message = "Ваша заявка <strong>№ " . $_REQUEST["thanks"] . "</strong> принята";
-            $this->dislpay_form = false;
+            $this->displayForm = false;
         }
     }
 }

@@ -34,9 +34,12 @@ class Cart
      */
     public function getListItemId()
     {
-        $listId = array_keys($_SESSION['cart']);
+        if (is_array($_SESSION['cart'])) {
+            $listId = array_keys($_SESSION['cart']);
+            return $listId;
+        }
 
-        return $listId;
+        return [];
     }
 
     /**

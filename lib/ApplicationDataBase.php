@@ -120,6 +120,6 @@ class ApplicationDataBase
 
     public function insertId()
     {
-        return self::getInstance()->connection()->lastInsertId();
+        return self::$connection->lastInsertId();
     }
 }
