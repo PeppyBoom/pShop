@@ -1,8 +1,4 @@
 <?php
-//Error_reporting(E_ALL & ~E_NOTICE);
-//print_r(PDO::getAvailableDrivers());
-
-define("PATH_SITE", $_SERVER['DOCUMENT_ROOT']);
 
 function classAutoLoad($className) {
     $path = strtolower($className);
