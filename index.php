@@ -4,7 +4,7 @@ use lib\ApplicationRouter;
 
 require_once "./params.php";
 
-require_once "./classLoader.php";
+require_once "./autoload.php";
 
 //создаю объект, который ищет нужные контроллеры
 $router = new ApplicationRouter();
