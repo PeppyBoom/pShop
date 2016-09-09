@@ -73,7 +73,7 @@ class Order
             "order_content" => $orderContent
         ];
 
-        ApplicationDataBase::getInstance()->buildQuery("INSERT INTO pShop.order SET", $array);
+        ApplicationDataBase::getInstance()->buildQuery("INSERT INTO " . DB_NAME . ".order SET", $array);
         //заказ с номером равным id добавляю в базу
         $id = ApplicationDataBase::getInstance()->insertId();
 

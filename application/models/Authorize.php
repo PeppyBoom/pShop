@@ -19,7 +19,7 @@ class Authorize
      * проверка данных авторизации
      */
     public function validateAuth($login, $password) {
-        $query = ApplicationDataBase::getInstance()->query("select * from pShop.user where login = '$login' and pass = '$password'");
+        $query = ApplicationDataBase::getInstance()->query("select * from " . DB_NAME . ".user where login = '$login' and pass = '$password'");
 
         if ($query->fetchObject()) {
             $_SESSION['Auth'] = true;
