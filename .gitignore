@@ -4,3 +4,6 @@ PDOErrors.txt
 .idea/
 less/normalize.css
 less/style.css
+
+/vendor/
+error.log

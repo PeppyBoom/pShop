@@ -1,0 +1,12 @@
+{
+    "name": "user/pshop",
+    "authors": [
+        {
+            "name": "valery",
+            "email": "developman36@gmail.com"
+        }
+    ],
+    "require": {
+        "sabberworm/php-css-parser" : "*"
+    }
+}
