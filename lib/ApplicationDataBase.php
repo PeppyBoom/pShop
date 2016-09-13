@@ -52,7 +52,7 @@ class ApplicationDataBase
 
     public static function getInstance()
     {
-        return null == self::$instance ? new static() : self::$instance;
+        return null === self::$instance ? self::$instance = new static() : self::$instance;
     }
 
     /**
